@@ -41,12 +41,11 @@ class TransactionServiceTest {
         MockitoAnnotations.initMocks(this);
     }
 
-
     @Test
     @DisplayName("Should create transaction successfully when everything is OK")
-    void createTransactionCase1() throws Exception {
-        User sender = new User(1L, "Maria", "Souza", "99999999901", "maria@gmail.com", "12345", new BigDecimal(10), UserType.COMMON);
-        User receiver = new User(2L, "Joao", "Souza", "99999999902", "joao@gmail.com", "12345", new BigDecimal(10), UserType.COMMON);
+    void createTransactionCase1() throws Exception{
+        User sender = new User(1L, "Maria", "Sousa", "99999999901", "maria@gmail.com", "12345", new BigDecimal(10), UserType.COMMON);
+        User receiver = new User(2L, "Joao", "Sousa", "99999999902", "joao@gmail.com", "12345", new BigDecimal(10), UserType.COMMON);
 
         when(userService.findUserById(1L)).thenReturn(sender);
         when(userService.findUserById(2L)).thenReturn(receiver);
@@ -69,10 +68,10 @@ class TransactionServiceTest {
     }
 
     @Test
-    @DisplayName("Should throw Exception when Transaction is not allowed")
-    void createTransactionCase2() throws Exception {
-        User sender = new User(1L, "Maria", "Souza", "99999999901", "maria@gmail.com", "12345", new BigDecimal(10), UserType.COMMON);
-        User receiver = new User(2L, "Joao", "Souza", "99999999902", "joao@gmail.com", "12345", new BigDecimal(10), UserType.COMMON);
+    @DisplayName("Should throw Exception when transaction is not allowed")
+    void createTransactionCase2() throws Exception{
+        User sender = new User(1L, "Maria", "Sousa", "99999999901", "maria@gmail.com", "12345", new BigDecimal(10), UserType.COMMON);
+        User receiver = new User(2L, "Joao", "Sousa", "99999999902", "joao@gmail.com", "12345", new BigDecimal(10), UserType.COMMON);
 
         when(userService.findUserById(1L)).thenReturn(sender);
         when(userService.findUserById(2L)).thenReturn(receiver);

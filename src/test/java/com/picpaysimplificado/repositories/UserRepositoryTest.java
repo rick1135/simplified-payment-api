@@ -28,9 +28,9 @@ class UserRepositoryTest {
 
     @Test
     @DisplayName("Should get User successfully from DB")
-    void findUserByDocumentCase1() {
-        String document = "99999999901";
-        UserDTO data = new UserDTO("Fernanda", "Teste", document, new BigDecimal(10), "test@gmail.com", "44444", UserType.COMMON);
+    void findUserByDocumentSuccess() {
+        String document = "99999999999";
+        UserDTO data = new UserDTO("Ronaldo", "Teste", document, new BigDecimal(10), "teste@gmail.com", "444", UserType.COMMON);
         this.createUser(data);
 
         Optional<User> result = this.userRepository.findUserByDocument(document);
@@ -40,8 +40,9 @@ class UserRepositoryTest {
 
     @Test
     @DisplayName("Should not get User from DB when user not exists")
-    void findUserByDocumentCase2() {
-        String document = "99999999901";
+    void findUserByDocumentFail() {
+        String document = "99999999999";
+
 
         Optional<User> result = this.userRepository.findUserByDocument(document);
 
